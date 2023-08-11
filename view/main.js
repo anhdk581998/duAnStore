@@ -18,7 +18,7 @@ function showAll() {
       <th>${productInStore[i].quantity}</th>
       <th>${productInStore[i].price}</th>
       <th ><button onclick="remove(${i})">Remove</button></th>
-      <th ><button onclick="showFormEdit()">Edit</button></th>
+      <th ><button onclick="showFormEdit(${i})">Edit</button></th>
       </tr>
 `
     }
@@ -86,34 +86,42 @@ function remove(index) {
 }
 
 
-function showFormEdit() {
-    let productEdit = Products[index]
+function showFormEdit(index) {
     document.getElementById('form-edit').innerHTML = `
 
 <h1>Edit Product </h1>
 <table>
     <tr>
         <td>Id</td>
-        <td><input type="number" value="${productEdit.id}" id="idEdit"></td>
+        <td><input type="number" value="${store.listProducts[index].id}" id="idEdit"></td>
     </tr>
     <tr>
         <td>Name</td>
-        <td><input type="text" id="nameEdit"></td>
+        <td><input type="text" value="${store.listProducts[index].name}" id="nameEdit"></td>
     </tr>
     <tr>
         <td>Quantity</td>
-        <td><input type="number" id="quantityEdit"></td>
+    <td><input type="number" value="${store.listProducts[index].quantity}" id="quantityEdit"></td>
     </tr>
     <tr>
         <td>Price</td>
-        <td><input type="number" id="priceEdit"></td>
+        <td><input type="number" value="${store.listProducts[index].price}" id="priceEdit"></td>
     </tr>
     <tr>
         <th colspan="2">
-            <button>Edit</button>
+            <button onclick="editProduct(${index})">Edit</button>
         </th>
     </tr>
 </table>
 `
 
+}
+
+function editProduct(index) {
+    store.listProducts[index].id = document.getElementById("idEdit").value;
+    store.listProducts[index].name = document.getElementById("nameEdit").value;
+    store.listProducts[index].quantity = document.getElementById("quantityEdit").value;
+    store.listProducts[index].price = document.getElementById("priceEdit").value;
+
+    showAll();
 }

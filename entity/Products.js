@@ -1,44 +1,44 @@
 class Products {
-    _id;
-    _name;
-    _quantity;
-    _price;
+    id;
+    name;
+    quantity;
+    price;
     constructor(idInput, nameInput, quantityInput,priceInput) {
-        this._id = idInput;
-        this._name = nameInput;
-        this._quantity = quantityInput;
-        this._price = priceInput;
+        this.id = idInput;
+        this.name = nameInput;
+        this.quantity = quantityInput;
+        this.price = priceInput;
     }
 
     get id() {
-        return this._id;
+        return this.id;
     }
 
     set id(value) {
-        this._id = value;
+        this.id = value;
     }
 
     get name() {
-        return this._name;
+        return this.name;
     }
 
     set name(value) {
-        this._name = value;
+        this.name = value;
     }
 
     get quantity() {
-        return this._quantity;
+        return this.quantity;
     }
 
     set quantity(value) {
-        this._quantity = value;
+        this.quantity = value;
     }
 
     get price() {
-        return this._price;
+        return this.price;
     }
 
     set price(value) {
-        this._price = value;
+        this.price = value;
     }
 }
