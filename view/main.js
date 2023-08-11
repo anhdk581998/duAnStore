@@ -33,7 +33,7 @@ function add() {
     let newProduct = new Products(id, name, quantity, price)
     store.add(newProduct)
     console.log(store)
-    // alert('Add Success')
+    alert('Add Success')
     showAll()
     document.getElementById('form-add').innerHTML = ''
 
@@ -124,4 +124,5 @@ function editProduct(index) {
     store.listProducts[index].price = document.getElementById("priceEdit").value;
 
     showAll();
+    document.getElementById('form-edit').innerHTML = ''
 }
