@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>store</title>
+
+</head>
+<body>
+<center id="form-add">
+</center>
+
+<center id="form-edit">
+</center>
+
+<center>
+    <h1>My store</h1>
+    <button  onclick="showFormAdd()">Add Product</button>
+    <table border="1px">
+        <tr>
+            <th title="text">Id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th colspan="2">Action</th>
+        </tr>
+
+        <tbody id="product">
+
+        </tbody>
+    </table>
+</center>
+<script src="../entity/Products.js"></script>
+<script src="../manager/Store.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
